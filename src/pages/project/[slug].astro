@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'alethiea' },
+      props: {
+        name: 'Alethiea',
+        greek: 'ἀλήθεια',
+        meaning: 'the unconcealment of what was hidden',
+        problem: ['AI reads research papers', 'makes conclusions', 'the papers change', 'conclusions are now wrong', 'nobody knows'],
+        solution: ['remembers which papers it read', 'when they change', 'tells you exactly which conclusions broke'],
+        stack: [
+          { name: 'Python', url: 'https://python.org' },
+          { name: 'OpenAIRE MCP', url: 'https://github.com/AlienIntelligence/openaire-mcp' },
+          { name: 'Alien Intelligence', url: 'https://alienintelligence.com' },
+        ],
+        hackathon: 'openaire ai hackathon 2026',
+        hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
+        github: 'https://github.com/prx0r/Alethiea',
+        logo: '/images/alethiea-logo.png?v=3',
+        duration: '12 weeks',
+        prize: '€500',
+        status: 'submitted',
+        video: null,
+      },
+    },
+    {
+      params: { slug: 'iolaus' },
+      props: {
+        name: 'Iolaus',
+        greek: 'Ἰόλαος',
+        meaning: 'he who verified the hydra\'s recall',
+        problem: ['AI remembers things in a graph', 'sometimes it remembers wrong', 'nobody checks'],
+        solution: ['gives it a test with known answers', 'shows exactly what it gets wrong', 'and why'],
+        stack: [
+          { name: 'Python', url: 'https://python.org' },
+          { name: 'HydraDB', url: 'https://github.com/HydraDB/HydraDB' },
+          { name: 'Cypher', url: 'https://neo4j.com/cypher' },
+        ],
+        hackathon: 'hack hydra 2026',
+        hackathonUrl: 'https://luma.com/h038glzk',
+        github: 'https://github.com/prx0r/Iolaus',
+        logo: '/images/iolaus-logo.png?v=3',
+        duration: '9 days',
+        prize: '$5,000',
+        status: 'submitted',
+        video: null,
+      },
+    },
+  ];
+}
+
+const { name, greek, meaning, problem, solution, stack, hackathon, hackathonUrl, github, logo, duration, prize, status, video } = Astro.props;
+---
+
+<Layout title={`${name} — truth x ai`}>
+  <main style="width: 100%; padding: 3rem 2rem;">
+    <header style="margin-bottom: 3rem;">
+      <a href="/" style="font-size: 0.75rem; color: #999; border-bottom: 1px solid #ddd;">← back</a>
+    </header>
+
+    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+      <img src={logo} alt={name} style="width: 96px; height: 96px; object-fit: contain;" />
+      <div>
+        <h1 style="font-size: 1.5rem; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 0.25rem;">
+          {name}
+        </h1>
+        <p style="font-size: 0.75rem; color: #bbb; letter-spacing: 0.05em;">
+          {greek} — {meaning}
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      {video ? (
+        <video
+          src={video}
+          autoplay
+          loop
+          muted
+          playsinline
+          style="width: 100%; max-width: 640px; border: 1px solid #eee;"
+        />
+      ) : (
+        <div style="width: 100%; max-width: 640px; aspect-ratio: 16/9; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #999;">
+          demo video coming soon
+        </div>
+      )}
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+      <div>
+        <p style="font-size: 0.6875rem; color: #8b4545; margin-bottom: 0.75rem; text-transform: lowercase; letter-spacing: 0.05em;">problem</p>
+        {problem.map((line: string) => (
+          <p style="font-size: 0.875rem; color: #333; line-height: 1.8; padding-left: 1rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #ddd;">·</span>
+            {line}
+          </p>
+        ))}
+      </div>
+      <div>
+        <p style="font-size: 0.6875rem; color: #4a6b4a; margin-bottom: 0.75rem; text-transform: lowercase; letter-spacing: 0.05em;">solution</p>
+        {solution.map((line: string) => (
+          <p style="font-size: 0.875rem; color: #333; line-height: 1.8; padding-left: 1rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #ddd;">·</span>
+            {line}
+          </p>
+        ))}
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
+      {stack.map((item: { name: string; url: string }) => (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size: 0.75rem; color: #999; border-bottom: 1px solid #ddd; padding-bottom: 1px;"
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+
+    <div style="display: flex; gap: 1.5rem; font-size: 0.75rem; color: #666;">
+      <span>{duration}</span>
+      <span style="color: #ddd;">·</span>
+      <span>{prize}</span>
+      <span style="color: #ddd;">·</span>
+      <span style="color: #000;">{status}</span>
+      <span style="color: #ddd;">·</span>
+      <a
+        href={hackathonUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        style="color: #000; border-bottom: 1px solid #ccc;"
+      >
+        {hackathon}
+      </a>
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        style="color: #000; border-bottom: 1px solid #ccc;"
+      >
+        github
+      </a>
+    </div>
+  </main>
+</Layout>
