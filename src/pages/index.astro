@@ -4,59 +4,54 @@ import Layout from '../layouts/Layout.astro';
 const projects = [
   {
     name: 'alethiea',
-    description: 'pāṭala research ci — continuous verification for agentic science',
-    language: 'python',
-    url: 'https://github.com/prx0r/Alethiea',
+    tagline: 'detects when openaire evidence changes and emits proof obligations for every agent conclusion that silently broke.',
     hackathon: 'openaire ai hackathon 2026',
-    tagline: 'when openaire evidence changes, agent conclusions break. alethiea detects the blast radius and emits proof obligations.',
+    hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
+    github: 'https://github.com/prx0r/Alethiea',
   },
   {
     name: 'iolaus',
-    description: 'memoryproof — benchmark and debugger for graph memory systems',
-    language: 'python',
-    url: 'https://github.com/prx0r/Iolaus',
+    tagline: 'benchmarks whether hydradb recall returns attributable, temporally correct, cross-source consistent context or just plausible noise.',
     hackathon: 'hack hydra 2026',
-    tagline: 'tests whether hydradb recall returns attributable, temporally correct, cross-source consistent context.',
+    hackathonUrl: 'https://luma.com/h038glzk',
+    github: 'https://github.com/prx0r/Iolaus',
   },
 ];
 ---
 
 <Layout title="truth x ai">
-  <main style="max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem;">
+  <main style="width: 100%; padding: 3rem 2rem;">
     <header style="margin-bottom: 4rem;">
-      <h1 style="font-size: 1.5rem; font-weight: 400; letter-spacing: 0.1em;">
+      <h1 style="font-size: 1.25rem; font-weight: 400; letter-spacing: 0.08em;">
         truth x ai
       </h1>
     </header>
 
-    <p style="font-size: 0.75rem; color: #999; margin-bottom: 3rem; letter-spacing: 0.15em;">
-      hackathon builds
-    </p>
-
     {projects.map((project) => (
-      <article style="margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #eee;">
-        <h2 style="font-size: 1.125rem; font-weight: 400; margin-bottom: 0.5rem; letter-spacing: 0.05em;">
+      <article style="margin-bottom: 5rem; padding-bottom: 4rem; border-bottom: 1px solid #eee;">
+        <h2 style="font-size: 2rem; font-weight: 400; margin-bottom: 1rem; letter-spacing: 0.02em; text-transform: lowercase;">
           {project.name}
         </h2>
-        <p style="font-size: 0.875rem; color: #666; line-height: 1.6; margin-bottom: 1rem;">
-          {project.description}
-        </p>
-        <p style="font-size: 0.8125rem; color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
+        <p style="font-size: 0.9375rem; color: #333; line-height: 1.6; margin-bottom: 2rem; max-width: 50rem;">
           {project.tagline}
         </p>
-        <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #999; letter-spacing: 0.1em;">
-          <span>{project.language}</span>
-          <span style="color: #ddd;">|</span>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.8125rem; color: #666;">
           <a
-            href={project.url}
+            href={project.hackathonUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #000; border-bottom: 1px solid #ccc;"
+          >
+            {project.hackathon}
+          </a>
+          <a
+            href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             style="color: #000; border-bottom: 1px solid #ccc;"
           >
             github
           </a>
-          <span style="color: #ddd;">|</span>
-          <span>{project.hackathon}</span>
         </div>
       </article>
     ))}
