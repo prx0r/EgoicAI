@@ -8,29 +8,6 @@ const {
   title = 'truth x ai',
   description = 'hackathon builds'
 } = Astro.props;
-
-const fonts = [
-  { name: 'Share Tech Mono', var: '--font-share-tech-mono' },
-  { name: 'JetBrains Mono', var: '--font-jetbrains-mono' },
-  { name: 'IBM Plex Mono', var: '--font-ibm-plex-mono' },
-  { name: 'Fira Code', var: '--font-fira-code' },
-  { name: 'Space Mono', var: '--font-space-mono' },
-  { name: 'Source Code Pro', var: '--font-source-code-pro' },
-  { name: 'Inconsolata', var: '--font-inconsolata' },
-  { name: 'Roboto Mono', var: '--font-roboto-mono' },
-  { name: 'PT Mono', var: '--font-pt-mono' },
-  { name: 'Overpass Mono', var: '--font-overpass-mono' },
-  { name: 'Victor Mono', var: '--font-victor-mono' },
-  { name: 'Courier Prime', var: '--font-courier-prime' },
-  { name: 'Geist Mono', var: '--font-geist-mono' },
-  { name: 'Inter', var: '--font-inter' },
-  { name: 'Space Grotesk', var: '--font-space-grotesk' },
-  { name: 'IBM Plex Sans', var: '--font-ibm-plex-sans' },
-  { name: 'Outfit', var: '--font-outfit' },
-  { name: 'DM Sans', var: '--font-dm-sans' },
-  { name: 'Manrope', var: '--font-manrope' },
-  { name: 'Nunito', var: '--font-nunito' },
-];
 ---
 
 <!doctype html>
@@ -41,6 +18,9 @@ const fonts = [
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&family=Fira+Code:wght@300;400;500&family=Space+Mono&family=Source+Code+Pro:wght@300;400;500&family=Inconsolata:wght@300;400;500&family=Roboto+Mono:wght@300;400;500&family=PT+Mono&family=Overpass+Mono:wght@300;400;500&family=Victor+Mono&family=Courier+Prime&family=Geist+Mono&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Outfit:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Manrope:wght@300;400;500&family=Nunito:wght@300;400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <slot />
@@ -54,13 +34,13 @@ const fonts = [
       padding: 0.75rem;
       font-size: 0.6875rem;
       z-index: 9999;
-      max-width: 200px;
+      width: 220px;
     ">
       <div style="margin-bottom: 0.5rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: #999;">
         font
       </div>
       <div style="display: flex; flex-direction: column; gap: 0.375rem;">
-        <div id="font-name" style="font-size: 0.625rem; color: #000; letter-spacing: 0.05em;">
+        <div id="font-name" style="font-size: 0.625rem; color: #000; letter-spacing: 0.05em; min-height: 1em;">
           Share Tech Mono
         </div>
         <div style="display: flex; gap: 0.25rem;">
@@ -92,7 +72,7 @@ const fonts = [
 
     <script is:inline>
       (function() {
-        const fontNames = [
+        var fontNames = [
           'Share Tech Mono',
           'JetBrains Mono',
           'IBM Plex Mono',
@@ -115,15 +95,15 @@ const fonts = [
           'Nunito'
         ];
 
-        let currentIndex = 0;
-        const nameEl = document.getElementById('font-name');
-        const prevBtn = document.getElementById('prev-font');
-        const nextBtn = document.getElementById('next-font');
+        var currentIndex = 0;
+        var nameEl = document.getElementById('font-name');
+        var prevBtn = document.getElementById('prev-font');
+        var nextBtn = document.getElementById('next-font');
 
         function applyFont(index) {
           currentIndex = index;
-          const name = fontNames[index];
-          document.body.style.fontFamily = '"' + name + '", monospace';
+          var name = fontNames[index];
+          document.body.style.fontFamily = "'" + name + "', monospace";
           nameEl.textContent = name;
           localStorage.setItem('selected-font', name);
         }
@@ -138,7 +118,6 @@ const fonts = [
           applyFont(i);
         });
 
-        // Restore saved font
         var saved = localStorage.getItem('selected-font');
         if (saved) {
           var idx = fontNames.indexOf(saved);
