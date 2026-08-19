@@ -32,33 +32,30 @@ const projects = [
 <Layout title="truth x ai">
   <main style="width: 100%; padding: 3rem 2rem;">
     <header style="margin-bottom: 4rem;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="/favicon.png" alt="egoic" style="width: 56px; height: 56px; object-fit: contain;" />
-        <button id="copy-email" style="
-          font-family: 'Source Code Pro', monospace;
-          font-size: 0.75rem;
-          color: #999;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          position: relative;
-          display: inline-block;
-        ">
-          <span id="email-text">tom@egoic.ai</span>
-          <span id="copy-feedback" style="
-            display: none;
-            position: absolute;
-            top: -1.25rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.625rem;
-            color: #000;
-            white-space: nowrap;
-            pointer-events: none;
-          ">copied</span>
-        </button>
-      </div>
+      <button id="copy-email" style="
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.75rem;
+        color: #999;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        display: inline-block;
+      ">
+        <span id="email-text">tom@egoic.ai</span>
+        <span id="copy-feedback" style="
+          display: none;
+          position: absolute;
+          top: -1.25rem;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 0.625rem;
+          color: #000;
+          white-space: nowrap;
+          pointer-events: none;
+        ">copied</span>
+      </button>
     </header>
 
     {projects.map((project) => (
