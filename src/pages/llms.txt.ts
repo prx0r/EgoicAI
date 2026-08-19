@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
-  const text = `# egoic.ai — Tom Prior
+  const text = `# truth x ai
 
 Hackathon builds.
 

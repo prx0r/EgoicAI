@@ -50,65 +50,65 @@ export function getStaticPaths() {
 const { name, description, language, url, hackathon, tagline, problem, solution, architecture, techStack } = Astro.props;
 ---
 
-<Layout title={`${name} — egoic.ai`}>
+<Layout title={`${name} — truth x ai`}>
   <main style="max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem;">
     <header style="margin-bottom: 3rem;">
-      <p style="font-size: 0.75rem; color: #999; margin-bottom: 1rem;">
-        <a href="/" style="color: #999; text-decoration: none;">egoic.ai</a>
-        <span style="margin: 0 0.5rem;">/</span>
-        {name}
+      <p style="font-size: 0.75rem; color: #666; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
+        <a href="/" style="color: #888; border-bottom: 1px solid #333;">truth x ai</a>
+        <span style="margin: 0 0.5rem; color: #333;">/</span>
+        <span style="color: #555;">{name}</span>
       </p>
-      <h1 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 0.5rem;">
+      <h1 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
         {name}
       </h1>
-      <p style="font-size: 0.875rem; color: #666; line-height: 1.6;">
+      <p style="font-size: 0.875rem; color: #888; line-height: 1.6;">
         {description}
       </p>
     </header>
 
     <section style="margin-bottom: 3rem;">
-      <p style="font-size: 0.8125rem; color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
+      <p style="font-size: 0.8125rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
         {tagline}
       </p>
-      <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #999;">
+      <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em;">
         <span>{language}</span>
-        <span style="color: #ddd;">|</span>
+        <span style="color: #333;">|</span>
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          style="color: #000; text-decoration: none; border-bottom: 1px solid #ddd;"
+          style="color: #888; border-bottom: 1px solid #333;"
         >
-          GitHub
+          github
         </a>
-        <span style="color: #ddd;">|</span>
+        <span style="color: #333;">|</span>
         <span>{hackathon}</span>
       </div>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 1rem;">
-        Problem
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+        problem
       </h2>
-      <p style="font-size: 0.875rem; color: #333; line-height: 1.7;">
+      <p style="font-size: 0.875rem; color: #ccc; line-height: 1.7;">
         {problem}
       </p>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 1rem;">
-        Solution
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+        solution
       </h2>
-      <p style="font-size: 0.875rem; color: #333; line-height: 1.7;">
+      <p style="font-size: 0.875rem; color: #ccc; line-height: 1.7;">
         {solution}
       </p>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 1rem;">
-        Architecture
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+        architecture
       </h2>
-      <div style="font-size: 0.8125rem; color: #666; line-height: 2; font-family: monospace;">
+      <div style="font-size: 0.8125rem; color: #888; line-height: 2; font-family: var(--font-mono), monospace;">
         {architecture.map((line: string) => (
           <p>{line}</p>
         ))}
@@ -116,20 +116,16 @@ const { name, description, language, url, hackathon, tagline, problem, solution,
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 1rem;">
-        Tech Stack
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+        tech stack
       </h2>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         {techStack.map((tech: string) => (
-          <span style="font-size: 0.75rem; color: #666; padding: 0.25rem 0.5rem; border: 1px solid #eee;">
+          <span style="font-size: 0.6875rem; color: #888; padding: 0.25rem 0.5rem; border: 1px solid #222; text-transform: uppercase; letter-spacing: 0.1em;">
             {tech}
           </span>
         ))}
       </div>
     </section>
-
-    <footer style="border-top: 1px solid #eee; padding-top: 2rem; font-size: 0.6875rem; color: #ccc;">
-      <p>Built for hackathons.</p>
-    </footer>
   </main>
 </Layout>

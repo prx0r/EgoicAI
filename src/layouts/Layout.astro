@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = 'egoic.ai',
-  description = 'Tom Prior — building for the OpenAIRE AI Hackathon 2026'
+  title = 'truth x ai',
+  description = 'Hackathon builds — agentic science, graph memory systems'
 } = Astro.props;
 ---
 
@@ -22,10 +22,14 @@ const {
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Tom Prior",
+        "@type": "WebSite",
+        "name": "truth x ai",
         "url": "https://egoic.ai",
-        "sameAs": ["https://github.com/prx0r"]
+        "author": {
+          "@type": "Person",
+          "name": "prx0r",
+          "url": "https://github.com/prx0r"
+        }
       }
     </script>
   </head>
@@ -42,11 +46,22 @@ const {
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, sans-serif;
-    background: #fff;
-    color: #000;
+    font-family: var(--font-mono), 'Courier New', monospace;
+    background: #000;
+    color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    transition: border-color 0.2s;
+  }
+
+  a:hover {
+    border-bottom-color: #fff;
   }
 </style>

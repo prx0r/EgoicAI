@@ -21,51 +21,44 @@ const projects = [
 ];
 ---
 
-<Layout title="egoic.ai — Tom Prior">
+<Layout title="truth x ai">
   <main style="max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem;">
     <header style="margin-bottom: 4rem;">
-      <h1 style="font-size: 0.875rem; font-weight: 300; letter-spacing: 0.05em;">
-        egoic.ai
+      <h1 style="font-size: 1.5rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;">
+        truth x ai
       </h1>
-      <p style="font-size: 0.75rem; color: #999; margin-top: 0.25rem;">
-        Tom Prior
-      </p>
     </header>
 
-    <p style="font-size: 0.75rem; color: #999; margin-bottom: 3rem;">
-      Hackathon builds.
+    <p style="font-size: 0.75rem; color: #666; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.15em;">
+      hackathon builds
     </p>
 
     {projects.map((project) => (
-      <article style="margin-bottom: 3rem;">
-        <h2 style="font-size: 1.125rem; font-weight: 300; margin-bottom: 0.5rem;">
+      <article style="margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #111;">
+        <h2 style="font-size: 1.125rem; font-weight: 400; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
           {project.name}
         </h2>
-        <p style="font-size: 0.875rem; color: #666; line-height: 1.6; margin-bottom: 1rem;">
+        <p style="font-size: 0.875rem; color: #888; line-height: 1.6; margin-bottom: 1rem;">
           {project.description}
         </p>
-        <p style="font-size: 0.8125rem; color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
+        <p style="font-size: 0.8125rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
           {project.tagline}
         </p>
-        <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #999;">
+        <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em;">
           <span>{project.language}</span>
-          <span style="color: #ddd;">|</span>
+          <span style="color: #333;">|</span>
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            style="color: #000; text-decoration: none; border-bottom: 1px solid #ddd;"
+            style="color: #888; border-bottom: 1px solid #333;"
           >
-            GitHub
+            github
           </a>
-          <span style="color: #ddd;">|</span>
+          <span style="color: #333;">|</span>
           <span>{project.hackathon}</span>
         </div>
       </article>
     ))}
-
-    <footer style="border-top: 1px solid #eee; padding-top: 2rem; font-size: 0.6875rem; color: #ccc;">
-      <p>Built for hackathons.</p>
-    </footer>
   </main>
 </Layout>

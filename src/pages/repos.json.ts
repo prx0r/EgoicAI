@@ -2,8 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
   const data = {
-    site: 'egoic.ai',
-    author: 'Tom Prior',
+    site: 'truth x ai',
     context: 'Hackathon builds',
     repos: [
       {
