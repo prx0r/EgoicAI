@@ -5,7 +5,7 @@ const projects = [
   {
     name: 'Alethiea',
     greek: 'ἀλήθεια',
-    meaning: 'truth — the unconcealment of what was hidden',
+    meaning: 'the unconcealment of what was hidden',
     problem: 'AI agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break with no audit trail.',
     solution: 'Tracks which evidence each conclusion depends on. When sources change, emits proof obligations for every affected claim.',
     hackathon: 'openaire ai hackathon 2026',
@@ -19,7 +19,7 @@ const projects = [
   {
     name: 'Iolaus',
     greek: 'Ἰόλαος',
-    meaning: 'he who helped slay the hydra — the necessary second',
+    meaning: 'he who verified the hydra\'s recall',
     problem: 'Graph memory systems return plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent.',
     solution: 'Exports verified ground truth, generates benchmark questions, runs them through the memory system, and produces a failure taxonomy.',
     hackathon: 'hack hydra 2026',
@@ -67,17 +67,14 @@ const projects = [
         <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
           <img src={project.logo} alt={project.name} style="width: 120px; height: 120px; object-fit: contain; flex-shrink: 0;" />
           <div style="flex: 1; min-width: 0;">
-            <h2 style="font-size: 0.9375rem; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 0.125rem;" title={`${project.greek} — ${project.meaning}`}>
+            <h2 style="font-size: 0.9375rem; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 0.5rem;" title={`${project.greek} — ${project.meaning}`}>
               {project.name}
             </h2>
-            <p style="font-size: 0.625rem; color: #bbb; margin-bottom: 0.5rem; letter-spacing: 0.05em;">
-              {project.greek} — {project.meaning}
-            </p>
             <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.375rem;">
-              <span style="color: #999;">problem:</span> {project.problem}
+              <span style="color: #8b4545;">problem:</span> {project.problem}
             </p>
             <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.75rem;">
-              <span style="color: #999;">solution:</span> {project.solution}
+              <span style="color: #4a6b4a;">solution:</span> {project.solution}
             </p>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.6875rem; color: #999; margin-bottom: 0.75rem;">
               <span>{project.duration}</span>
