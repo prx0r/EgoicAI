@@ -6,8 +6,31 @@ interface Props {
 
 const {
   title = 'truth x ai',
-  description = 'Hackathon builds — agentic science, graph memory systems'
+  description = 'hackathon builds'
 } = Astro.props;
+
+const fonts = [
+  { name: 'Share Tech Mono', var: '--font-share-tech-mono' },
+  { name: 'JetBrains Mono', var: '--font-jetbrains-mono' },
+  { name: 'IBM Plex Mono', var: '--font-ibm-plex-mono' },
+  { name: 'Fira Code', var: '--font-fira-code' },
+  { name: 'Space Mono', var: '--font-space-mono' },
+  { name: 'Source Code Pro', var: '--font-source-code-pro' },
+  { name: 'Inconsolata', var: '--font-inconsolata' },
+  { name: 'Roboto Mono', var: '--font-roboto-mono' },
+  { name: 'PT Mono', var: '--font-pt-mono' },
+  { name: 'Overpass Mono', var: '--font-overpass-mono' },
+  { name: 'Victor Mono', var: '--font-victor-mono' },
+  { name: 'Courier Prime', var: '--font-courier-prime' },
+  { name: 'Geist Mono', var: '--font-geist-mono' },
+  { name: 'Inter', var: '--font-inter' },
+  { name: 'Space Grotesk', var: '--font-space-grotesk' },
+  { name: 'IBM Plex Sans', var: '--font-ibm-plex-sans' },
+  { name: 'Outfit', var: '--font-outfit' },
+  { name: 'DM Sans', var: '--font-dm-sans' },
+  { name: 'Manrope', var: '--font-manrope' },
+  { name: 'Nunito', var: '--font-nunito' },
+];
 ---
 
 <!doctype html>
@@ -19,22 +42,111 @@ const {
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "truth x ai",
-        "url": "https://egoic.ai",
-        "author": {
-          "@type": "Person",
-          "name": "prx0r",
-          "url": "https://github.com/prx0r"
-        }
-      }
+    <script is:inline>
+      (function() {
+        const fonts = JSON.parse(localStorage.getItem('fonts') || 'null') || {
+          mono: 'Share Tech Mono',
+          sans: 'Inter'
+        };
+        document.documentElement.style.setProperty('--active-mono', fonts.mono);
+        document.documentElement.style.setProperty('--active-sans', fonts.sans);
+      })();
     </script>
   </head>
   <body>
     <slot />
+
+    <div id="font-picker" style="
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      font-size: 0.6875rem;
+      z-index: 9999;
+      max-width: 200px;
+      font-family: var(--font-inter), sans-serif;
+    ">
+      <div style="margin-bottom: 0.5rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: #999;">
+        font
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.375rem;">
+        <select id="font-select" style="
+          background: #fff;
+          border: 1px solid #ddd;
+          padding: 0.25rem;
+          font-size: 0.6875rem;
+          font-family: inherit;
+          cursor: pointer;
+          width: 100%;
+        ">
+          {fonts.map((f, i) => (
+            <option value={f.var} data-name={f.name} selected={i === 0}>
+              {f.name}
+            </option>
+          ))}
+        </select>
+        <div style="display: flex; gap: 0.25rem;">
+          <button id="prev-font" style="
+            flex: 1;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 0.25rem;
+            font-size: 0.625rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+          ">&larr; prev</button>
+          <button id="next-font" style="
+            flex: 1;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 0.25rem;
+            font-size: 0.625rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+          ">next &rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function() {
+        const select = document.getElementById('font-select');
+        const prev = document.getElementById('prev-font');
+        const next = document.getElementById('next-font');
+        const options = Array.from(select.options);
+
+        function applyFont(index) {
+          const opt = options[index];
+          const varName = opt.value;
+          document.body.style.fontFamily = `var(${varName}), monospace`;
+          document.documentElement.style.setProperty('--active-font', varName);
+          select.selectedIndex = index;
+        }
+
+        prev.addEventListener('click', () => {
+          const i = (select.selectedIndex - 1 + options.length) % options.length;
+          applyFont(i);
+        });
+
+        next.addEventListener('click', () => {
+          const i = (select.selectedIndex + 1) % options.length;
+          applyFont(i);
+        });
+
+        select.addEventListener('change', () => {
+          applyFont(select.selectedIndex);
+        });
+
+        // Init
+        applyFont(0);
+      })();
+    </script>
   </body>
 </html>
 
@@ -46,22 +158,22 @@ const {
   }
 
   body {
-    font-family: var(--font-mono), 'Courier New', monospace;
-    background: #000;
-    color: #fff;
+    font-family: var(--font-share-tech-mono), monospace;
+    background: #fff;
+    color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
   }
 
   a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ccc;
     transition: border-color 0.2s;
   }
 
   a:hover {
-    border-bottom-color: #fff;
+    border-bottom-color: #000;
   }
 </style>

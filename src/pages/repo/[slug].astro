@@ -6,42 +6,42 @@ export function getStaticPaths() {
     {
       params: { slug: 'alethiea' },
       props: {
-        name: 'Alethiea',
-        description: 'Pāṭala Research CI — continuous verification for agentic science',
-        language: 'Python',
+        name: 'alethiea',
+        description: 'pāṭala research ci — continuous verification for agentic science',
+        language: 'python',
         url: 'https://github.com/prx0r/Alethiea',
-        hackathon: 'OpenAIRE AI Hackathon 2026',
-        tagline: 'When OpenAIRE evidence changes, agent conclusions break. Alethiea detects the blast radius and emits proof obligations.',
-        problem: 'OpenAIRE agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break. There is no continuity layer for agent reasoning across evidence updates.',
-        solution: 'Records which OpenAIRE observations a conclusion depends on. Detects when those observations change. Emits proof obligations for affected conclusions. Leaves unaffected ones untouched.',
+        hackathon: 'openaire ai hackathon 2026',
+        tagline: 'when openaire evidence changes, agent conclusions break. alethiea detects the blast radius and emits proof obligations.',
+        problem: 'openaire agents draw conclusions from scholarly metadata. when that metadata changes, conclusions silently break. there is no continuity layer for agent reasoning across evidence updates.',
+        solution: 'records which openaire observations a conclusion depends on. detects when those observations change. emits proof obligations for affected conclusions. leaves unaffected ones untouched.',
         architecture: [
-          'Observation → derived claim → explicit dependency',
-          'Source changes → blast radius computed',
-          'Affected: PROOF OBLIGATION',
-          'Unaffected: NO ACTION NEEDED',
+          'observation → derived claim → explicit dependency',
+          'source changes → blast radius computed',
+          'affected: proof obligation',
+          'unaffected: no action needed',
         ],
-        techStack: ['Python', 'OpenAIRE MCP', 'Alien Intelligence', 'ScholeXplorer V3'],
+        techStack: ['python', 'openaire mcp', 'alien intelligence', 'scholexplorer v3'],
       },
     },
     {
       params: { slug: 'iolaus' },
       props: {
-        name: 'Iolaus',
-        description: 'MemoryProof — benchmark and debugger for graph memory systems',
-        language: 'Python',
+        name: 'iolaus',
+        description: 'memoryproof — benchmark and debugger for graph memory systems',
+        language: 'python',
         url: 'https://github.com/prx0r/Iolaus',
-        hackathon: 'Hack Hydra 2026',
-        tagline: 'Tests whether HydraDB recall returns attributable, temporally correct, cross-source consistent context.',
-        problem: 'Agent memory systems retrieve plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent. HydraDB has fast and thinking recall modes, but no standard benchmark measures accuracy.',
-        solution: 'Exports a verified scholarly corpus as ground truth, generates benchmark questions with known answers, runs them through HydraDB in both modes, and produces a failure taxonomy with 9 categories of memory errors.',
+        hackathon: 'hack hydra 2026',
+        tagline: 'tests whether hydradb recall returns attributable, temporally correct, cross-source consistent context.',
+        problem: 'agent memory systems retrieve plausible context. nobody systematically tests whether it is actually correct, attributable, or consistent. hydradb has fast and thinking recall modes, but no standard benchmark measures accuracy.',
+        solution: 'exports a verified scholarly corpus as ground truth, generates benchmark questions with known answers, runs them through hydradb in both modes, and produces a failure taxonomy with 9 categories of memory errors.',
         architecture: [
-          'Wiggly verified corpus → HydraDB export',
-          'Auto-generated questions (factual, multi-hop, contradiction, temporal)',
-          'HydraDB evaluation (fast + thinking modes)',
-          'Failure taxonomy (9 error categories)',
-          'Auto-tune Hydra config via evolutionary optimizer',
+          'wiggly verified corpus → hydradb export',
+          'auto-generated questions (factual, multi-hop, contradiction, temporal)',
+          'hydradb evaluation (fast + thinking modes)',
+          'failure taxonomy (9 error categories)',
+          'auto-tune hydradb config via evolutionary optimizer',
         ],
-        techStack: ['Python', 'HydraDB', 'Cypher', 'Knowledge Graphs', 'Benchmarking'],
+        techStack: ['python', 'hydradb', 'cypher', 'knowledge graphs', 'benchmarking'],
       },
     },
   ];
@@ -53,62 +53,62 @@ const { name, description, language, url, hackathon, tagline, problem, solution,
 <Layout title={`${name} — truth x ai`}>
   <main style="max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem;">
     <header style="margin-bottom: 3rem;">
-      <p style="font-size: 0.75rem; color: #666; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
-        <a href="/" style="color: #888; border-bottom: 1px solid #333;">truth x ai</a>
-        <span style="margin: 0 0.5rem; color: #333;">/</span>
-        <span style="color: #555;">{name}</span>
+      <p style="font-size: 0.75rem; color: #999; margin-bottom: 1rem; letter-spacing: 0.1em;">
+        <a href="/" style="color: #000; border-bottom: 1px solid #ccc;">truth x ai</a>
+        <span style="margin: 0 0.5rem; color: #ddd;">/</span>
+        <span style="color: #666;">{name}</span>
       </p>
-      <h1 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+      <h1 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; letter-spacing: 0.05em;">
         {name}
       </h1>
-      <p style="font-size: 0.875rem; color: #888; line-height: 1.6;">
+      <p style="font-size: 0.875rem; color: #666; line-height: 1.6;">
         {description}
       </p>
     </header>
 
     <section style="margin-bottom: 3rem;">
-      <p style="font-size: 0.8125rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem;">
+      <p style="font-size: 0.8125rem; color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
         {tagline}
       </p>
-      <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em;">
+      <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #999; letter-spacing: 0.1em;">
         <span>{language}</span>
-        <span style="color: #333;">|</span>
+        <span style="color: #ddd;">|</span>
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          style="color: #888; border-bottom: 1px solid #333;"
+          style="color: #000; border-bottom: 1px solid #ccc;"
         >
           github
         </a>
-        <span style="color: #333;">|</span>
+        <span style="color: #ddd;">|</span>
         <span>{hackathon}</span>
       </div>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #999; margin-bottom: 1rem;">
         problem
       </h2>
-      <p style="font-size: 0.875rem; color: #ccc; line-height: 1.7;">
+      <p style="font-size: 0.875rem; color: #333; line-height: 1.7;">
         {problem}
       </p>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #999; margin-bottom: 1rem;">
         solution
       </h2>
-      <p style="font-size: 0.875rem; color: #ccc; line-height: 1.7;">
+      <p style="font-size: 0.875rem; color: #333; line-height: 1.7;">
         {solution}
       </p>
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #999; margin-bottom: 1rem;">
         architecture
       </h2>
-      <div style="font-size: 0.8125rem; color: #888; line-height: 2; font-family: var(--font-mono), monospace;">
+      <div style="font-size: 0.8125rem; color: #666; line-height: 2;">
         {architecture.map((line: string) => (
           <p>{line}</p>
         ))}
@@ -116,12 +116,12 @@ const { name, description, language, url, hackathon, tagline, problem, solution,
     </section>
 
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #666; margin-bottom: 1rem;">
+      <h2 style="font-size: 0.6875rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.15em; color: #999; margin-bottom: 1rem;">
         tech stack
       </h2>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         {techStack.map((tech: string) => (
-          <span style="font-size: 0.6875rem; color: #888; padding: 0.25rem 0.5rem; border: 1px solid #222; text-transform: uppercase; letter-spacing: 0.1em;">
+          <span style="font-size: 0.6875rem; color: #666; padding: 0.25rem 0.5rem; border: 1px solid #eee; letter-spacing: 0.1em;">
             {tech}
           </span>
         ))}
