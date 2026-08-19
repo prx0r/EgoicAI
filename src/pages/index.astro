@@ -4,8 +4,8 @@ import Layout from '../layouts/Layout.astro';
 const projects = [
   {
     name: 'Alethiea',
-    what: 'A verification layer that tracks which scholarly evidence each AI agent conclusion depends on.',
-    why: 'When research metadata changes, agent conclusions silently break. Alethiea detects the blast radius and flags every affected claim.',
+    problem: 'AI agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break with no audit trail.',
+    solution: 'Tracks which evidence each conclusion depends on. When sources change, emits proof obligations for every affected claim.',
     hackathon: 'openaire ai hackathon 2026',
     hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
     github: 'https://github.com/prx0r/Alethiea',
@@ -16,8 +16,8 @@ const projects = [
   },
   {
     name: 'Iolaus',
-    what: 'A benchmark suite that tests whether graph memory systems return correct, attributable, temporally consistent context.',
-    why: 'Agent memory retrieves plausible-sounding context. Nobody systematically tests if it is actually right. Iolaus proves it or exposes the failure modes.',
+    problem: 'Graph memory systems return plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent.',
+    solution: 'Exports verified ground truth, generates benchmark questions, runs them through the memory system, and produces a failure taxonomy.',
     hackathon: 'hack hydra 2026',
     hackathonUrl: 'https://luma.com/h038glzk',
     github: 'https://github.com/prx0r/Iolaus',
@@ -70,10 +70,10 @@ const projects = [
               {project.name}
             </h2>
             <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.375rem;">
-              <span style="color: #999;">what:</span> {project.what}
+              <span style="color: #999;">problem:</span> {project.problem}
             </p>
             <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.75rem;">
-              <span style="color: #999;">why:</span> {project.why}
+              <span style="color: #999;">solution:</span> {project.solution}
             </p>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.6875rem; color: #999; margin-bottom: 0.75rem;">
               <span>{project.duration}</span>
