@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /repos.json
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+Sitemap: https://egoic.ai/sitemap.xml

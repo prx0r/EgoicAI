@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const alethiea = {
+  name: 'Alethiea',
+  description: 'Pāṭala Research CI — continuous verification for agentic science',
+  language: 'Python',
+  url: 'https://github.com/prx0r/Alethiea',
+  updated: '2026-08-19',
+  hackathon: 'OpenAIRE AI Hackathon 2026',
+  tagline: 'When OpenAIRE evidence changes, agent conclusions break. Alethiea detects the blast radius and emits proof obligations.',
+};
+---
+
+<Layout title="egoic.ai — Tom Prior">
+  <main style="max-width: 42rem; margin: 0 auto; padding: 5rem 1.5rem;">
+    <header style="margin-bottom: 4rem;">
+      <h1 style="font-size: 0.875rem; font-weight: 300; letter-spacing: 0.05em;">
+        egoic.ai
+      </h1>
+      <p style="font-size: 0.75rem; color: #999; margin-top: 0.25rem;">
+        Tom Prior
+      </p>
+    </header>
+
+    <p style="font-size: 0.75rem; color: #999; margin-bottom: 3rem;">
+      OpenAIRE AI Hackathon 2026 build.
+    </p>
+
+    <article style="margin-bottom: 4rem;">
+      <h2 style="font-size: 1.125rem; font-weight: 300; margin-bottom: 0.5rem;">
+        {alethiea.name}
+      </h2>
+      <p style="font-size: 0.875rem; color: #666; line-height: 1.6; margin-bottom: 1rem;">
+        {alethiea.description}
+      </p>
+      <p style="font-size: 0.8125rem; color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
+        {alethiea.tagline}
+      </p>
+      <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem; color: #999;">
+        <span>{alethiea.language}</span>
+        <span style="color: #ddd;">|</span>
+        <a
+          href={alethiea.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #000; text-decoration: none; border-bottom: 1px solid #ddd;"
+        >
+          GitHub
+        </a>
+        <span style="color: #ddd;">|</span>
+        <span>{alethiea.hackathon}</span>
+      </div>
+    </article>
+
+    <footer style="border-top: 1px solid #eee; padding-top: 2rem; font-size: 0.6875rem; color: #ccc;">
+      <p>Built for the OpenAIRE AI Hackathon 2026.</p>
+    </footer>
+  </main>
+</Layout>
