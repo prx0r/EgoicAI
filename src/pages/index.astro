@@ -9,7 +9,7 @@ const projects = [
     hackathon: 'openaire ai hackathon 2026',
     hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
     github: 'https://github.com/prx0r/Alethiea',
-    logo: '/images/alethiea-logo.png',
+    logo: '/images/alethiea-logo.png?v=2',
     duration: '12 weeks',
     prize: '€500',
     status: 'submitted',
@@ -21,7 +21,7 @@ const projects = [
     hackathon: 'hack hydra 2026',
     hackathonUrl: 'https://luma.com/h038glzk',
     github: 'https://github.com/prx0r/Iolaus',
-    logo: '/images/iolaus-logo.png',
+    logo: '/images/iolaus-logo.png?v=2',
     duration: '9 days',
     prize: '$5,000',
     status: 'submitted',
@@ -62,7 +62,7 @@ const projects = [
     </header>
 
     {projects.map((project) => (
-      <article style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+      <article style="margin-bottom: 2.5rem; padding-bottom: 2rem;">
         <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
           <img src={project.logo} alt={project.name} style="width: 120px; height: 120px; object-fit: contain; flex-shrink: 0;" />
           <div style="flex: 1; min-width: 0;">
