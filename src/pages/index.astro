@@ -6,8 +6,8 @@ const projects = [
     name: 'Alethiea',
     greek: 'ἀλήθεια',
     meaning: 'the unconcealment of what was hidden',
-    problem: 'AI agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break with no audit trail.',
-    solution: 'Tracks which evidence each conclusion depends on. When sources change, emits proof obligations for every affected claim.',
+    problem: 'AI reads research papers and makes conclusions. The papers change. The conclusions are now wrong but nobody knows.',
+    solution: 'Remembers which papers it read. When they change, tells you exactly which conclusions broke.',
     stack: [
       { name: 'Python', url: 'https://python.org' },
       { name: 'OpenAIRE MCP', url: 'https://github.com/AlienIntelligence/openaire-mcp' },
@@ -25,8 +25,8 @@ const projects = [
     name: 'Iolaus',
     greek: 'Ἰόλαος',
     meaning: 'he who verified the hydra\'s recall',
-    problem: 'Graph memory systems return plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent.',
-    solution: 'Exports verified ground truth, generates benchmark questions, runs them through the memory system, and produces a failure taxonomy.',
+    problem: 'AI remembers things in a graph. Sometimes it remembers wrong. Nobody checks.',
+    solution: 'Gives it a test with known answers. Shows exactly what it gets wrong and why.',
     stack: [
       { name: 'Python', url: 'https://python.org' },
       { name: 'HydraDB', url: 'https://github.com/HydraDB/HydraDB' },
