@@ -10,7 +10,6 @@ export function getStaticPaths() {
         description: 'Pāṭala Research CI — continuous verification for agentic science',
         language: 'Python',
         url: 'https://github.com/prx0r/Alethiea',
-        updated: '2026-08-19',
         hackathon: 'OpenAIRE AI Hackathon 2026',
         tagline: 'When OpenAIRE evidence changes, agent conclusions break. Alethiea detects the blast radius and emits proof obligations.',
         problem: 'OpenAIRE agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break. There is no continuity layer for agent reasoning across evidence updates.',
@@ -24,10 +23,31 @@ export function getStaticPaths() {
         techStack: ['Python', 'OpenAIRE MCP', 'Alien Intelligence', 'ScholeXplorer V3'],
       },
     },
+    {
+      params: { slug: 'iolaus' },
+      props: {
+        name: 'Iolaus',
+        description: 'MemoryProof — benchmark and debugger for graph memory systems',
+        language: 'Python',
+        url: 'https://github.com/prx0r/Iolaus',
+        hackathon: 'Hack Hydra 2026',
+        tagline: 'Tests whether HydraDB recall returns attributable, temporally correct, cross-source consistent context.',
+        problem: 'Agent memory systems retrieve plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent. HydraDB has fast and thinking recall modes, but no standard benchmark measures accuracy.',
+        solution: 'Exports a verified scholarly corpus as ground truth, generates benchmark questions with known answers, runs them through HydraDB in both modes, and produces a failure taxonomy with 9 categories of memory errors.',
+        architecture: [
+          'Wiggly verified corpus → HydraDB export',
+          'Auto-generated questions (factual, multi-hop, contradiction, temporal)',
+          'HydraDB evaluation (fast + thinking modes)',
+          'Failure taxonomy (9 error categories)',
+          'Auto-tune Hydra config via evolutionary optimizer',
+        ],
+        techStack: ['Python', 'HydraDB', 'Cypher', 'Knowledge Graphs', 'Benchmarking'],
+      },
+    },
   ];
 }
 
-const { name, description, language, url, updated, hackathon, tagline, problem, solution, architecture, techStack } = Astro.props;
+const { name, description, language, url, hackathon, tagline, problem, solution, architecture, techStack } = Astro.props;
 ---
 
 <Layout title={`${name} — egoic.ai`}>
@@ -109,7 +129,7 @@ const { name, description, language, url, updated, hackathon, tagline, problem, 
     </section>
 
     <footer style="border-top: 1px solid #eee; padding-top: 2rem; font-size: 0.6875rem; color: #ccc;">
-      <p>Built for the OpenAIRE AI Hackathon 2026.</p>
+      <p>Built for hackathons.</p>
     </footer>
   </main>
 </Layout>

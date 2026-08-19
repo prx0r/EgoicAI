@@ -15,6 +15,12 @@ export const GET: APIRoute = async () => {
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://egoic.ai/repo/iolaus</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>`;
 
   return new Response(xml, {

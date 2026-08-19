@@ -4,7 +4,7 @@ export const GET: APIRoute = async () => {
   const data = {
     site: 'egoic.ai',
     author: 'Tom Prior',
-    context: 'OpenAIRE AI Hackathon 2026 build',
+    context: 'Hackathon builds',
     repos: [
       {
         name: 'Alethiea',
@@ -26,6 +26,28 @@ export const GET: APIRoute = async () => {
           'Unaffected: NO ACTION NEEDED',
         ],
         techStack: ['Python', 'OpenAIRE MCP', 'Alien Intelligence', 'ScholeXplorer V3'],
+      },
+      {
+        name: 'Iolaus',
+        slug: 'iolaus',
+        description: 'MemoryProof — benchmark and debugger for graph memory systems',
+        language: 'Python',
+        stars: 0,
+        url: 'https://github.com/prx0r/Iolaus',
+        updated: '2026-08-19',
+        hackathon: 'Hack Hydra 2026',
+        problem:
+          'Agent memory systems retrieve plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent.',
+        solution:
+          'Exports a verified scholarly corpus as ground truth, generates benchmark questions with known answers, runs them through HydraDB in both modes, and produces a failure taxonomy with 9 categories of memory errors.',
+        architecture: [
+          'Wiggly verified corpus → HydraDB export',
+          'Auto-generated questions (factual, multi-hop, contradiction, temporal)',
+          'HydraDB evaluation (fast + thinking modes)',
+          'Failure taxonomy (9 error categories)',
+          'Auto-tune Hydra config via evolutionary optimizer',
+        ],
+        techStack: ['Python', 'HydraDB', 'Cypher', 'Knowledge Graphs', 'Benchmarking'],
       },
     ],
   };
