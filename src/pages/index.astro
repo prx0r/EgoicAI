@@ -8,7 +8,11 @@ const projects = [
     meaning: 'the unconcealment of what was hidden',
     problem: 'AI agents draw conclusions from scholarly metadata. When that metadata changes, conclusions silently break with no audit trail.',
     solution: 'Tracks which evidence each conclusion depends on. When sources change, emits proof obligations for every affected claim.',
-    stack: ['Python', 'OpenAIRE MCP', 'Alien Intelligence', 'httpx', 'Rich'],
+    stack: [
+      { name: 'Python', url: 'https://python.org' },
+      { name: 'OpenAIRE MCP', url: 'https://github.com/AlienIntelligence/openaire-mcp' },
+      { name: 'Alien Intelligence', url: 'https://alienintelligence.com' },
+    ],
     hackathon: 'openaire ai hackathon 2026',
     hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
     github: 'https://github.com/prx0r/Alethiea',
@@ -23,7 +27,11 @@ const projects = [
     meaning: 'he who verified the hydra\'s recall',
     problem: 'Graph memory systems return plausible context. Nobody systematically tests whether it is actually correct, attributable, or consistent.',
     solution: 'Exports verified ground truth, generates benchmark questions, runs them through the memory system, and produces a failure taxonomy.',
-    stack: ['Python', 'HydraDB', 'Cypher', 'Wiggly', 'Rich'],
+    stack: [
+      { name: 'Python', url: 'https://python.org' },
+      { name: 'HydraDB', url: 'https://github.com/HydraDB/HydraDB' },
+      { name: 'Cypher', url: 'https://neo4j.com/cypher' },
+    ],
     hackathon: 'hack hydra 2026',
     hackathonUrl: 'https://luma.com/h038glzk',
     github: 'https://github.com/prx0r/Iolaus',
@@ -78,9 +86,18 @@ const projects = [
             <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.75rem;">
               <span style="color: #4a6b4a;">solution:</span> {project.solution}
             </p>
-            <p style="font-size: 0.6875rem; color: #bbb; margin-bottom: 0.75rem; letter-spacing: 0.03em;">
-              <span style="color: #999;">stack:</span> {project.stack.join(' · ')}
-            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+              {project.stack.map((item: { name: string; url: string }) => (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: 0.6875rem; color: #999; border-bottom: 1px solid #ddd; padding-bottom: 1px;"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.6875rem; color: #999; margin-bottom: 0.75rem;">
               <span>{project.duration}</span>
               <span style="color: #ddd;">·</span>
