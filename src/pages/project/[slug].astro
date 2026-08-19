@@ -12,9 +12,9 @@ export function getStaticPaths() {
         problem: 'ai agent conclusions become stale when their source evidence changes',
         solution: 'tracks which evidence each conclusion depends on and flags the ones that broke',
         stack: [
-          { name: 'Python', url: 'https://python.org' },
-          { name: 'OpenAIRE MCP', url: 'https://github.com/AlienIntelligence/openaire-mcp' },
-          { name: 'Alien Intelligence', url: 'https://alienintelligence.com' },
+          { name: 'Python', url: 'https://github.com/prx0r/Alethiea', color: '#3776ab' },
+          { name: 'OpenAIRE MCP', url: 'https://github.com/AlienIntelligence/openaire-mcp', color: '#000' },
+          { name: 'Alien Intelligence', url: 'https://github.com/AlienIntelligence', color: '#000' },
         ],
         hackathon: 'openaire ai hackathon 2026',
         hackathonUrl: 'https://graph.openaire.eu/component/eventbooking/hackathons/openaire-ai-hackathon-powered-by-alien-intelligence',
@@ -35,9 +35,9 @@ export function getStaticPaths() {
         problem: 'graph memory systems return plausible context with no guarantee it is correct',
         solution: 'runs a benchmark with known answers and exposes every failure mode',
         stack: [
-          { name: 'Python', url: 'https://python.org' },
-          { name: 'HydraDB', url: 'https://github.com/HydraDB/HydraDB' },
-          { name: 'Cypher', url: 'https://neo4j.com/cypher' },
+          { name: 'Python', url: 'https://github.com/prx0r/Iolaus', color: '#3776ab' },
+          { name: 'HydraDB', url: 'https://github.com/HydraDB/HydraDB', color: '#000' },
+          { name: 'Cypher', url: 'https://github.com/neo4j/cypher', color: '#000' },
         ],
         hackathon: 'hack hydra 2026',
         hackathonUrl: 'https://luma.com/h038glzk',
@@ -106,12 +106,12 @@ const { name, greek, meaning, problem, solution, stack, hackathon, hackathonUrl,
     </div>
 
     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
-      {stack.map((item: { name: string; url: string }) => (
+      {stack.map((item: { name: string; url: string; color: string }) => (
         <a
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          style="font-size: 0.75rem; color: #999; border-bottom: 1px solid #ddd; padding-bottom: 1px;"
+          style={`font-size: 0.75rem; color: ${item.color}; text-decoration: none;`}
         >
           {item.name}
         </a>
@@ -129,7 +129,7 @@ const { name, greek, meaning, problem, solution, stack, hackathon, hackathonUrl,
         href={hackathonUrl}
         target="_blank"
         rel="noopener noreferrer"
-        style="color: #000; border-bottom: 1px solid #ccc;"
+        style="color: #000; text-decoration: none;"
       >
         {hackathon}
       </a>
@@ -137,7 +137,7 @@ const { name, greek, meaning, problem, solution, stack, hackathon, hackathonUrl,
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        style="color: #000; border-bottom: 1px solid #ccc;"
+        style="color: #000; text-decoration: none;"
       >
         github
       </a>
