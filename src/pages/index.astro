@@ -12,7 +12,6 @@ const projects = [
     duration: '12 weeks',
     prize: '€500 grand prize',
     status: 'submitted',
-    video: null,
   },
   {
     name: 'iolaus',
@@ -24,68 +23,61 @@ const projects = [
     duration: '9 days',
     prize: '$5,000 grand champion',
     status: 'submitted',
-    video: null,
   },
 ];
 ---
 
 <Layout title="truth x ai">
   <main style="width: 100%; padding: 3rem 2rem;">
-    <header style="margin-bottom: 5rem;">
-      <div style="display: flex; align-items: center; gap: 1.5rem;">
-        <img src="/favicon.png" alt="egoic" style="width: 72px; height: 72px; object-fit: contain;" />
-        <div>
-          <h1 style="font-size: 0.875rem; font-weight: 400; letter-spacing: 0.08em;">
-            truth x ai
-          </h1>
-          <button id="copy-email" style="
-            font-family: 'Source Code Pro', monospace;
-            font-size: 0.75rem;
-            color: #999;
-            margin-top: 0.375rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            position: relative;
-            display: inline-block;
-          ">
-            <span id="email-text">tom@egoic.ai</span>
-            <span id="copy-feedback" style="
-              display: none;
-              position: absolute;
-              top: -1.5rem;
-              left: 50%;
-              transform: translateX(-50%);
-              font-size: 0.625rem;
-              color: #000;
-              white-space: nowrap;
-              pointer-events: none;
-            ">copied</span>
-          </button>
-        </div>
+    <header style="margin-bottom: 4rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="/favicon.png" alt="egoic" style="width: 56px; height: 56px; object-fit: contain;" />
+        <button id="copy-email" style="
+          font-family: 'Source Code Pro', monospace;
+          font-size: 0.75rem;
+          color: #999;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          position: relative;
+          display: inline-block;
+        ">
+          <span id="email-text">tom@egoic.ai</span>
+          <span id="copy-feedback" style="
+            display: none;
+            position: absolute;
+            top: -1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.625rem;
+            color: #000;
+            white-space: nowrap;
+            pointer-events: none;
+          ">copied</span>
+        </button>
       </div>
     </header>
 
     {projects.map((project) => (
-      <article style="margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #eee;">
-        <div style="display: flex; gap: 2rem; align-items: flex-start;">
-          <img src={project.logo} alt={project.name} style="width: 160px; height: 160px; object-fit: contain; flex-shrink: 0;" />
+      <article style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+          <img src={project.logo} alt={project.name} style="width: 120px; height: 120px; object-fit: contain; flex-shrink: 0;" />
           <div style="flex: 1; min-width: 0;">
-            <h2 style="font-size: 1rem; font-weight: 400; letter-spacing: 0.02em; text-transform: lowercase; margin-bottom: 0.75rem;">
+            <h2 style="font-size: 0.9375rem; font-weight: 400; letter-spacing: 0.02em; text-transform: lowercase; margin-bottom: 0.5rem;">
               {project.name}
             </h2>
-            <p style="font-size: 0.8125rem; color: #333; line-height: 1.6; margin-bottom: 1.25rem;">
+            <p style="font-size: 0.8125rem; color: #333; line-height: 1.5; margin-bottom: 0.75rem;">
               {project.tagline}
             </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.6875rem; color: #999; margin-bottom: 1rem;">
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.6875rem; color: #999; margin-bottom: 0.75rem;">
               <span>{project.duration}</span>
               <span style="color: #ddd;">·</span>
               <span>{project.prize}</span>
               <span style="color: #ddd;">·</span>
               <span style="color: #000;">{project.status}</span>
             </div>
-            <div style="display: flex; gap: 1.5rem; font-size: 0.75rem; color: #666;">
+            <div style="display: flex; gap: 1.25rem; font-size: 0.6875rem; color: #666;">
               <a
                 href={project.hackathonUrl}
                 target="_blank"
